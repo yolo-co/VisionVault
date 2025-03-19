@@ -1,0 +1,22 @@
+#include <Servo.h>
+
+Servo lockServo;
+
+void setup() {
+    Serial.begin(9600);
+    lockServo.attach(9);  // Servo connected to pin 9
+    lockServo.write(0);    // Lock position
+}
+
+void loop() {
+    if (Serial.available()) {
+        char command = Serial.read();
+        
+        if (command == 'o') {  // Unlock door
+            lockServo.write(90); 
+        }
+        if (command == 'c') {  // Lock door
+            lockServo.write(0);  
+        }
+    }
+}
