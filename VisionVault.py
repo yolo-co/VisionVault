@@ -8,7 +8,7 @@ bluetooth = serial.Serial(port='COM5', baudrate=9600, timeout=1)  # Change 'COM5
 time.sleep(2)  # Give time to establish connection
 
 
-authorized_image = face_recognition.load_image_file(r"C:\authorized_faces\yoga.jpg")  # Update with correct path
+authorized_image = face_recognition.load_image_file(r"path of image")  # Update with correct path
 authorized_encoding = face_recognition.face_encodings(authorized_image)[0]
 
 
